@@ -19,7 +19,8 @@ function App(props) {
   const getValueInput = (value) => {
     setCharacterFilter(value);
   };
-  //filter status character for the character name include characterFilter
+
+  //filter state character for the character name include characterFilter
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
@@ -36,7 +37,7 @@ function App(props) {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Filters handleChange={getValueInput} />
+          <Filters handleChange={getValueInput} value={characterFilter} />
           <CharacterList characters={filterByName} />
         </Route>
         <Route path="/:id">{getElementDetail}</Route>
