@@ -9,6 +9,7 @@ import CharacterDetail from './CharacterDetail';
 function App(props) {
   const [characters, setCharacters] = useState([]);
   const [characterFilter, setCharacterFilter] = useState('');
+
   useEffect(() => {
     FetchDataApi().then((data) => {
       setCharacters(data);
@@ -22,7 +23,13 @@ function App(props) {
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
-  //console.log(characters);
+  const getElementDetail = (props) => {
+    const paramsPath = parseInt(props.match.params.id);
+    const foundCharacter = characters.find((character) => character.id === paramsPath);
+    if (foundCharacter !== undefined) {
+      return <CharacterDetail character={foundCharacter} />;
+    }
+  };
 
   return (
     <div className="App">
@@ -32,9 +39,7 @@ function App(props) {
           <Filters handleChange={getValueInput} />
           <CharacterList characters={filterByName} />
         </Route>
-        <Route path="/characterDetail/:name">
-          <CharacterDetail />
-        </Route>
+        <Route path="/:id">{getElementDetail}</Route>
       </Switch>
     </div>
   );
