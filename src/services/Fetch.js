@@ -9,6 +9,9 @@ const FetchDataApi = () => {
           name: result.name,
           species: result.species,
           image: result.image,
+          origin: result.origin.name,
+          episode: result.episode,
+          status: result.status,
         };
       });
     });

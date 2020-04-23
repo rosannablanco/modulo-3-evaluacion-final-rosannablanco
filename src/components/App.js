@@ -13,16 +13,15 @@ function App() {
       setCharacters(data);
     });
   }, []);
+  //get value of input and set in status characterFilter
   const getValueInput = (value) => {
     setCharacterFilter(value);
   };
-
+  //filter status character for the character name include characterFilter
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
-
-  console.log(filterByName);
-
+  console.log(characters);
   return (
     <div className="App">
       <Header />
