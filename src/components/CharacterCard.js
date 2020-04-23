@@ -3,7 +3,6 @@ import React from 'react';
 //import '../stylesheets/App.css';
 
 function CharacterCard(props) {
-  console.log(props.character.name);
   return (
     <li className="CharacterLi">
       <img className="Img" src={props.character.image} title="" alt="" />

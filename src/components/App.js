@@ -7,17 +7,27 @@ import '../stylesheets/App.css';
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [characterFilter, setCharacterFilter] = useState('');
   useEffect(() => {
     FetchDataApi().then((data) => {
       setCharacters(data);
     });
   }, []);
+  const getValueInput = (value) => {
+    setCharacterFilter(value);
+  };
+
+  const filterByName = characters.filter((character) => {
+    return character.name.toLowerCase().includes(characterFilter.toLowerCase());
+  });
+
+  console.log(filterByName);
 
   return (
     <div className="App">
       <Header />
-      <Filters />
-      <CharacterList characters={characters} />
+      <Filters handleChange={getValueInput} />
+      <CharacterList characters={filterByName} />
     </div>
   );
 }
