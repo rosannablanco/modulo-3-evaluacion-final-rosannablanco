@@ -2,7 +2,6 @@ import React from 'react';
 import '../stylesheets/Filters.css';
 
 function Filters(props) {
-  console.log(props.value);
   const handleChangeInput = (ev) => {
     props.handleChange(ev.target.value);
   };

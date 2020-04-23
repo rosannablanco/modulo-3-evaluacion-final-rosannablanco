@@ -24,11 +24,48 @@
 }
 .titleName {
   font-size: 18px;
+  padding: 5px 0;
+}
+
+.statusH {
+  vertical-align: center;
+  width: 5%;
+}
+.statusA {
+  vertical-align: center;
+  width: 10%;
 }
 .bold {
   font-size: 14px;
   font-weight: 600;
 }
 .normal {
+  font-size: 14px;
   font-weight: 300;
+}
+@media all and (max-width: 1024px) {
+  .CharacterDetail {
+    margin: 0 20%;
+  }
+}
+@media all and (max-width: 768px) {
+  .CharacterDetail {
+    margin: 0 15%;
+  }
+  .ImgDetail {
+    width: 40%;
+    margin-right: 20px;
+  }
+}
+@media all and (max-width: 320px) {
+  .CharacterDetail {
+    margin: 0 15%;
+  }
+  .container {
+    flex-wrap: wrap;
+  }
+  .ImgDetail {
+    width: 100%;
+    margin-right: 0px;
+  }
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import alien from '../images/alien.svg';
+import human from '../images/human.svg';
+import died from '../images/died.svg';
 import '../stylesheets/CharacterDetail.css';
 
 function CharacterDetail(props) {
@@ -17,7 +20,8 @@ function CharacterDetail(props) {
             Status: <span className="normal">{props.character.status}</span>
           </p>
           <p className="bold">
-            Species: <span className="normal">{props.character.species}</span>
+            Species: <span className="normal">{props.character.species} </span>
+            <img className={props.character.species === 'Human' ? 'statusH' : 'statusA'} src={props.character.species === 'Human' ? human : alien} alt={props.character.status} title={props.character.status} />
           </p>
           <p className="bold">
             Origin: <span className="normal">{props.character.origin}</span>
