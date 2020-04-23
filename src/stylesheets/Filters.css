@@ -1,0 +1,21 @@
+.Filters {
+  margin: 0 15%;
+  text-align: center;
+}
+.Input {
+  background-color: black;
+  color: white;
+  border: 2px solid rgb(0, 178, 209);
+  padding: 5px 10px;
+  width: 40%;
+}
+@media all and (max-width: 768px) {
+  .Input {
+    width: 60%;
+  }
+}
+@media all and (max-width: 324px) {
+  .Input {
+    width: 100%;
+  }
+}
