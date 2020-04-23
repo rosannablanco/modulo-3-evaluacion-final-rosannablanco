@@ -1,15 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import FetchDataApi from '../services/Fetch';
-
+import CharacterList from './CharacterList';
 import '../stylesheets/App.css';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
   useEffect(() => {
     FetchDataApi().then((data) => {
-      console.log(data);
+      setCharacters(data);
     });
-  });
-  return <div className="App">Hola</div>;
+  }, []);
+
+  return (
+    <div className="App">
+      <CharacterList characters={characters} />
+    </div>
+  );
 }
 
 export default App;
