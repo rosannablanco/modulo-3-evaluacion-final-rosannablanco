@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {Route, Switch} from 'react-router-dom';
 import FetchDataApi from '../services/Fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import Header from './Header';
-import '../stylesheets/App.css';
+import CharacterDetail from './CharacterDetail';
 
-function App() {
+function App(props) {
   const [characters, setCharacters] = useState([]);
   const [characterFilter, setCharacterFilter] = useState('');
   useEffect(() => {
@@ -21,12 +22,20 @@ function App() {
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
-  console.log(characters);
+  //console.log(characters);
+
   return (
     <div className="App">
       <Header />
-      <Filters handleChange={getValueInput} />
-      <CharacterList characters={filterByName} />
+      <Switch>
+        <Route exact path="/">
+          <Filters handleChange={getValueInput} />
+          <CharacterList characters={filterByName} />
+        </Route>
+        <Route path="/characterDetail/:name">
+          <CharacterDetail />
+        </Route>
+      </Switch>
     </div>
   );
 }
