@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 function CharacterCard(props) {
+  const {id, image, name, species} = props.character;
   return (
     <li className="CharacterLi">
-      <Link to={`/${props.character.id}`} className="link">
-        <img className="Img" src={props.character.image} title={`foto de ${props.character.name}`} alt={`foto de ${props.character.name}`} />
+      <Link to={`/${id}`} className="link">
+        <img className="Img" src={image} title={`foto de ${name}`} alt={`foto de ${name}`} />
         <div className="ContainerInfo">
-          <h4>{props.character.name}</h4>
-          <p>{props.character.species}</p>
+          <h4>{name}</h4>
+          <p>{species}</p>
         </div>
       </Link>
     </li>
