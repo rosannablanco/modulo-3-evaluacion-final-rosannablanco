@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+
+import '../stylesheets/CharacterDetail.css';
+//images
 import alien from '../images/alien.svg';
 import human from '../images/human.svg';
 //import died from '../images/died.svg';
-import '../stylesheets/CharacterDetail.css';
 
 function CharacterDetail(props) {
   const {image, name, status, species, origin, episode} = props.character;
