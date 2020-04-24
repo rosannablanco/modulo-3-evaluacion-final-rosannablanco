@@ -14,7 +14,16 @@ function App() {
 
   useEffect(() => {
     FetchDataApi().then((data) => {
-      setCharacters(data);
+      const dataOrder = data.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        } else if (a.name > b.name) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      setCharacters(dataOrder);
     });
   }, []);
   //get value of input and set in status characterFilter
