@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import alien from '../images/alien.svg';
 import human from '../images/human.svg';
-import died from '../images/died.svg';
+//import died from '../images/died.svg';
 import '../stylesheets/CharacterDetail.css';
 
 function CharacterDetail(props) {

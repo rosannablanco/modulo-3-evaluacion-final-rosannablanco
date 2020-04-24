@@ -4,8 +4,6 @@ import '../stylesheets/CharacterList.css';
 import CharacterCard from './CharacterCard';
 
 function CharacterList(props) {
-  console.log(props);
-
   const ElementCharacter = props.characters.map((character, index) => {
     return <CharacterCard character={character} key={index} />;
   });
