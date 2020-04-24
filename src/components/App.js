@@ -21,13 +21,12 @@ function App() {
       setCharacters(dataSort);
     });
   }, []);
-
-  //get value of input and set in status characterFilter
+  //get value of input and save in state characterFilter
   const getValueInput = (value) => {
     setCharacterFilter(value);
   };
 
-  //filter state character for the character name that include characterFilter
+  //filter by character.name that includes characterFilter
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
