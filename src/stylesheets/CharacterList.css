@@ -1,6 +1,10 @@
 .SectionList {
   padding-top: 30px;
 }
+.text-nofound {
+  color: white;
+  text-align: center;
+}
 .CharacterList {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

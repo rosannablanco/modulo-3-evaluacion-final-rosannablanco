@@ -38,7 +38,7 @@ function App(props) {
       <Switch>
         <Route exact path="/">
           <Filters handleChange={getValueInput} value={characterFilter} />
-          <CharacterList characters={filterByName} />
+          <CharacterList characters={filterByName} value={characterFilter} />
         </Route>
         <Route path="/:id">{getElementDetail}</Route>
       </Switch>
