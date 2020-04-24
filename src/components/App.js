@@ -50,7 +50,7 @@ function App() {
           <Filters handleChange={getValueInput} value={characterFilter} />
           <CharacterList characters={filterByName} value={characterFilter} />
         </Route>
-        <Route path="/:id">{getElementDetail}</Route>
+        <Route path="/detail/:id">{getElementDetail}</Route>
       </Switch>
     </div>
   );
