@@ -6,7 +6,9 @@ import Filters from './Filters';
 import Header from './Header';
 import CharacterDetail from './CharacterDetail';
 
-function App(props) {
+import '../stylesheets/App.css';
+
+function App() {
   const [characters, setCharacters] = useState([]);
   const [characterFilter, setCharacterFilter] = useState('');
 
@@ -24,11 +26,14 @@ function App(props) {
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
+  //function
   const getElementDetail = (props) => {
     const paramsPath = parseInt(props.match.params.id);
     const foundCharacter = characters.find((character) => character.id === paramsPath);
     if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
+    } else {
+      return <p className="Error">El personaje que buscas no existe</p>;
     }
   };
 
