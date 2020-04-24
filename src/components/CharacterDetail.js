@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import alien from '../images/alien.svg';
 import human from '../images/human.svg';
@@ -6,7 +7,7 @@ import human from '../images/human.svg';
 import '../stylesheets/CharacterDetail.css';
 
 function CharacterDetail(props) {
-  console.log(props.character);
+  console.log(props);
   return (
     <section className="CharacterDetail">
       <Link to="/" className="link">
@@ -34,5 +35,14 @@ function CharacterDetail(props) {
     </section>
   );
 }
-
+CharacterDetail.propTypes = {
+  character: PropTypes.shape({
+    image: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    origin: PropTypes.string,
+    species: PropTypes.string,
+    episode: PropTypes.arrayOf(PropTypes.string),
+  }),
+};
 export default CharacterDetail;
