@@ -13,29 +13,26 @@ function App() {
   const [characterFilter, setCharacterFilter] = useState('');
 
   useEffect(() => {
+    //set the data from the api and sort by name and set state characters
     FetchDataApi().then((data) => {
-      const dataOrder = data.sort((a, b) => {
-        if (a.name < b.name) {
-          return -1;
-        } else if (a.name > b.name) {
-          return 1;
-        } else {
-          return 0;
-        }
+      const dataSort = data.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
       });
-      setCharacters(dataOrder);
+      setCharacters(dataSort);
     });
   }, []);
+
   //get value of input and set in status characterFilter
   const getValueInput = (value) => {
     setCharacterFilter(value);
   };
 
-  //filter state character for the character name include characterFilter
+  //filter state character for the character name that include characterFilter
   const filterByName = characters.filter((character) => {
     return character.name.toLowerCase().includes(characterFilter.toLowerCase());
   });
-  //function
+
+  //get props.match.params of the path and search the character whose id === to id params
   const getElementDetail = (props) => {
     const paramsPath = parseInt(props.match.params.id);
     const foundCharacter = characters.find((character) => character.id === paramsPath);
