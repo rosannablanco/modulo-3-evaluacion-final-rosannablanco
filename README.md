@@ -15,7 +15,7 @@ Necesitas tener instalado [Node.js](https://nodejs.org/).
 
 ## Diagrama de flujo
 
-![esquema-components](_src/images/esquema-components.png)
+![esquema-components](./src/images/esquema-components.png)
 
 ## Cómo funciona
 
