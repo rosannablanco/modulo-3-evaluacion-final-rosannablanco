@@ -22,17 +22,22 @@
   width: 50%;
   margin-right: 20px;
 }
+.Info {
+  width: 50%;
+  list-style: none;
+}
 .titleName {
   font-size: 18px;
   padding: 5px 0;
 }
 .pIcon {
   position: relative;
-  line-height: 1.8rem;
+  line-height: 2rem;
 }
 .iconImg {
   position: absolute;
   right: 0;
+  top: 5px;
 }
 .w-8 {
   width: 8%;
@@ -54,7 +59,7 @@
 }
 @media all and (max-width: 1024px) {
   .CharacterDetail {
-    margin: 0 20%;
+    margin: 0 25%;
   }
 }
 @media all and (max-width: 768px) {
@@ -65,15 +70,6 @@
   .Info {
     width: 100%;
     margin-right: 0px;
-  }
-  .w-8 {
-    width: 5%;
-  }
-  .w-5 {
-    width: 4%;
-  }
-  .w-4 {
-    width: 3%;
   }
 }
 @media all and (max-width: 320px) {

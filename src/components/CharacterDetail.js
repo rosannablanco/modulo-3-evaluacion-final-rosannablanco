@@ -37,23 +37,24 @@ function CharacterDetail(props) {
       </Link>
       <div className="container">
         <img className="ImgDetail" src={image} title={name} alt={name} />
-        <div className="Info">
+
+        <ul className="Info">
           <h3 className="titleName">{name}</h3>
-          <p className="pIcon bold">
+          <li className="pIcon bold">
             Status: <span className="normal">{status}</span>
             {getImgStatus()}
-          </p>
-          <p className="pIcon bold">
+          </li>
+          <li className="pIcon bold">
             Species: <span className="normal">{species} </span>
             <img className={species === 'Human' ? 'iconImg w-4' : 'iconImg w-8'} src={species === 'Human' ? human : alien} alt={species} title={species} />
-          </p>
-          <p className="pIcon bold">
+          </li>
+          <li className="pIcon bold">
             Origin: <span className="normal">{origin}</span>
-          </p>
-          <p className="pIcon bold">
+          </li>
+          <li className="pIcon bold">
             Episodes: <span className="normal">{episode.length}</span>
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
   );
