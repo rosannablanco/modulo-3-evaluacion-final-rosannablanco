@@ -26,15 +26,24 @@
   font-size: 18px;
   padding: 5px 0;
 }
-
-.statusH {
-  vertical-align: center;
+.pIcon {
+  position: relative;
+  line-height: 1.8rem;
+}
+.iconImg {
+  position: absolute;
+  right: 0;
+}
+.w-8 {
+  width: 8%;
+}
+.w-5 {
   width: 5%;
 }
-.statusA {
-  vertical-align: center;
-  width: 10%;
+.w-4 {
+  width: 4%;
 }
+
 .bold {
   font-size: 14px;
   font-weight: 600;
@@ -49,23 +58,29 @@
   }
 }
 @media all and (max-width: 768px) {
-  .CharacterDetail {
-    margin: 0 15%;
+  .container {
+    flex-wrap: wrap;
   }
-  .ImgDetail {
-    width: 40%;
-    margin-right: 20px;
+  .ImgDetail,
+  .Info {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .w-8 {
+    width: 5%;
+  }
+  .w-5 {
+    width: 4%;
+  }
+  .w-4 {
+    width: 3%;
   }
 }
 @media all and (max-width: 320px) {
   .CharacterDetail {
     margin: 0 15%;
   }
-  .container {
-    flex-wrap: wrap;
-  }
   .ImgDetail {
-    width: 100%;
     margin-right: 0px;
   }
 }
