@@ -1,5 +1,9 @@
 .Error {
-  color: rgb(0, 178, 209);
+  margin: 0 10%;
   text-align: center;
+  background-color: rgb(0, 178, 209);
+  padding: 10px;
+  color: white;
+  line-height: 1.5rem;
   font-weight: 600;
 }
